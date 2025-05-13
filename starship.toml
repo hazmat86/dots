@@ -1,0 +1,92 @@
+format = """
+[](#a3aed2)\
+$username\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$c\
+$lua\
+$golang\
+$python\
+[](fg:#212736 bg:#1d2230)\
+$shell\
+[](fg:#1d2230 bg:#a3aed2)\
+$status\
+[ ](fg:#a3aed2)\
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:#a3aed2"
+style_root = "bg:#a3aed2"
+format = '[$user ]($style)'
+disabled = false
+
+
+[directory]
+style = "bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+[c]
+symbol = " "
+style = "bg:#212736"
+format = '[ $symbol ]($style)'
+
+[lua]
+symbol = " "
+style = "bg:#212736"
+format = '[ $symbol ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#212736"
+format = '[ $symbol ($version) ]($style)'
+
+[shell]
+disabled = false
+fish_indicator = '󰈺 '
+bash_indicator = '_'
+style = "fg:#86BBD8 bg:#1d2230"
+format = '[$indicator]($style)'
+
+[status]
+style = "fg:#1d2230 bg:#a3aed2"
+symbol = '✘'
+success_symbol = ''
+format = '[$symbol$maybe_int]($style)'
+map_symbol = true
+disabled = false
+
+[character]
+success_symbol = '[➜](bold green)'
