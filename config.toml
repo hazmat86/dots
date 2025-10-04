@@ -1,0 +1,27 @@
+theme = "onedarker"
+
+[editor]
+line-number = "relative"
+scrolloff = 4
+cursorline = true
+
+[editor.statusline]
+mode.normal = "NOR"
+mode.select = "SEL"
+mode.insert = "INS"
+left = ["mode", "spinner", "read-only-indicator", "file-modification-indicator"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
